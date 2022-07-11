@@ -1167,6 +1167,7 @@ function SolarisLib:New(Config)
             function ItemHold:Label(text)
                 local Label, LabelFrame = {}, game:GetObjects("rbxassetid://7032552322")[1]
                 LabelFrame.Parent = Section
+                LabelFrame.Size = UDim2.new(1, 0, 0, 64)
                 LabelFrame.Title.Text = text
                 LabelFrame.Name = text .. "element"
 
