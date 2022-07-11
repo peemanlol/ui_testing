@@ -1,6 +1,15 @@
 --https://raw.githubusercontent.com/Stebulous/solaris-ui-lib/main/source.lua
 
 -- This User Interface Library is brought to you by Solaris Software.
+local TargetedParent = game:GetService("RunService"):IsStudio() and game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui") or game:GetService("CoreGui")
+	
+local FindOldInstance = TargetedParent:FindFirstChild("dosage's solaris gui")
+
+if FindOldInstance then
+    FindOldInstance:Destroy()
+    TargetedParent:FindFirstChild("notiHolder"):Destroy()
+end
+
 local Solaris = Instance.new("ScreenGui")
 Solaris.Name = "dosage's solaris gui"
 Solaris.Parent = game.CoreGui
@@ -221,14 +230,6 @@ function SolarisLib:Notification(title, desc)
 end    
 
 function SolarisLib:New(Config)
-    local TargetedParent = game:GetService("RunService"):IsStudio() and game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui") or game:GetService("CoreGui")
-	
-	local FindOldInstance = TargetedParent:FindFirstChild("dosage's solaris gui")
-	
-	if FindOldInstance then
-		FindOldInstance:Destroy()
-        TargetedParent:FindFirstChild("notiHolder"):Destroy()
-	end
 
     if not isfolder(Config.FolderToSave) then 
         makefolder(Config.FolderToSave)
