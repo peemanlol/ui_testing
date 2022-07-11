@@ -1185,28 +1185,6 @@ function SolarisLib:New(Config)
 
                 return Label
             end
-            function ItemHold:BiggerLabel(text)
-                local Label, LabelFrame = {}, game:GetObjects("rbxassetid://7032552322")[1]
-                LabelFrame.Parent = Section
-                LabelFrame.Size = UDim2.new(1, 0, 0, 64)
-                LabelFrame.Title.Text = text
-                LabelFrame.Name = text .. "element"
-
-                function Label:Set(tochange)
-                    LabelFrame.Title.Text = tochange
-                    LabelFrame.Name = text .. "element"
-                end    
-
-                
-                spawn(function()
-                    while wait() do
-                       LabelFrame.BackgroundColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].Label
-                       LabelFrame.Title.TextColor3 = SolarisLib.Themes[SolarisLib.Settings.Theme].TextColor
-                    end
-                end)
-
-                return Label
-            end
             function ItemHold:Textbox(text,disappear,callback)
                 local Textbox, TextboxFrame = {}, game:GetObjects("rbxassetid://7147292392")[1]
                 TextboxFrame.Parent = Section
